@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   get "/firstletter", controller: "games", action: "firstletter"
 
-
   get "/guessanumber", controller: "games",
-  action: "guessanumber"
+                       action: "guessanumber"
+
+  get "/addtwo/:num1/:num2" => "games#addtwo"
+
+  get "/guessanothernumber/:number" => "games#guessanothernumber"
 end

@@ -23,4 +23,21 @@ class GamesController < ApplicationController
     end
     render json: { message: number }
   end
+
+  def addtwo
+    number1 = params["num1"].to_i
+    number2 = params["num2"].to_i
+    sum = number1 + number2
+    render json: { message: sum }
+  end
+
+  def guessanothernumber
+    number = params["number"].to_i
+    if number == 36
+      number = "you guessed correctly"
+    else
+      number = "try again"
+    end
+    render json: { message: number }
+  end
 end
